@@ -6,7 +6,7 @@ using Portfolio.Model;
 namespace Portfolio.API.Controllers
 {
     [ApiController]
-    [Route("Contacts")]
+    [Route("[controller]")]
     public class ContactsController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -30,8 +30,7 @@ namespace Portfolio.API.Controllers
         public ActionResult<List<Contact>> Get()
         {
             try
-            {
-                throw new CustomException("teste", "aaa", 500);
+            { 
                 return Ok(_service.Get());
             }
             catch (Exception exception)

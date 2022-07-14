@@ -5,12 +5,14 @@ using Portfolio.Model;
 
 namespace Portfolio.API.Controllers
 {
-    public class ProjectController : ControllerBase
+    [ApiController]
+    [Route("[controller]")]
+    public class ProjectsController : ControllerBase
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IProjectService _service;
 
-        public ProjectController(ILogger<HomeController> logger, IProjectService service)
+        public ProjectsController(ILogger<HomeController> logger, IProjectService service)
         {
             _logger = logger;
             _service = service;

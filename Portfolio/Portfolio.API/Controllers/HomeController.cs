@@ -7,7 +7,7 @@ using Portfolio.Model;
 namespace Portfolio.API.Controllers
 {
     [ApiController]
-    [Route("Home")]
+    [Route("[controller]")]
     public class HomeController : ControllerBase
     {
         private readonly ILogger<HomeController> _logger;

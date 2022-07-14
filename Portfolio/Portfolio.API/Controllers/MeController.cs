@@ -7,7 +7,7 @@ using System.Text;
 namespace Portfolio.API.Controllers
 {
     [ApiController]
-    [Route("Me")]
+    [Route("[controller]")]
     public class MeController : ControllerBase
     {
         private readonly ILogger<HomeController> _logger;
