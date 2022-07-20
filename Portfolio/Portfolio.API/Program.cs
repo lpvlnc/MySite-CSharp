@@ -1,5 +1,4 @@
 using Microsoft.OpenApi.Models;
-using Portfolio.Data;
 using Portfolio.IoC;
 using System.Reflection;
 

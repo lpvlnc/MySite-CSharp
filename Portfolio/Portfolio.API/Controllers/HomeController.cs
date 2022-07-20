@@ -2,7 +2,6 @@
 using Portfolio.Application.Interfaces;
 using Portfolio.DTO;
 using Portfolio.ExceptionHandler;
-using Portfolio.Model;
 
 namespace Portfolio.API.Controllers
 {

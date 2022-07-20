@@ -2,7 +2,6 @@
 using Portfolio.Application.Interfaces;
 using Portfolio.ExceptionHandler;
 using Portfolio.Model;
-using System.Text;
 
 namespace Portfolio.API.Controllers
 {
