@@ -4,7 +4,7 @@
   "parameters": {
     "resourceGroupName": {
       "type": "string",
-      "defaultValue": "Portfolio-AppService",
+      "defaultValue": "leonardovalenca-api-resource-group",
       "metadata": {
         "_parameterType": "resourceGroup",
         "description": "Name of the resource group for the resource. It is recommended to put resources under same resource group for better tracking."
@@ -36,7 +36,7 @@
     },
     {
       "type": "Microsoft.Resources/deployments",
-      "name": "[concat(parameters('resourceGroupName'), 'Deployment', uniqueString(concat('PortfolioAPI', subscription().subscriptionId)))]",
+      "name": "[concat(parameters('resourceGroupName'), 'Deployment', uniqueString(concat('leonardovalenca-api', subscription().subscriptionId)))]",
       "resourceGroup": "[parameters('resourceGroupName')]",
       "apiVersion": "2019-10-01",
       "dependsOn": [
@@ -49,7 +49,7 @@
           "contentVersion": "1.0.0.0",
           "resources": [
             {
-              "name": "PortfolioAPI-Management-Service",
+              "name": "leonardovalenca-api-management-service",
               "type": "Microsoft.ApiManagement/service",
               "location": "[parameters('resourceLocation')]",
               "properties": {
@@ -59,7 +59,7 @@
                 "hostnameConfigurations": [
                   {
                     "type": "Proxy",
-                    "hostName": "portfolioapi-management-service.azure-api.net",
+                    "hostName": "leonardovalenca-api-management-service.azure-api.net",
                     "encodedCertificate": null,
                     "keyVaultId": null,
                     "certificatePassword": null,
@@ -94,9 +94,9 @@
             },
             {
               "type": "Microsoft.ApiManagement/service/apis",
-              "name": "PortfolioAPI-Management-Service/PortfolioAPI",
+              "name": "leonardovalenca-api-management-service/leonardovalenca-api",
               "properties": {
-                "displayName": "PortfolioAPI",
+                "displayName": "leonardovalenca-api",
                 "apiRevision": "1",
                 "description": null,
                 "subscriptionRequired": true,
@@ -117,7 +117,7 @@
               },
               "apiVersion": "2019-12-01",
               "dependsOn": [
-                "PortfolioAPI-Management-Service"
+                "leonardovalenca-api-management-service"
               ]
             }
           ]
