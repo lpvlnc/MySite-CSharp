@@ -70,5 +70,23 @@ namespace Portfolio.Data
             get;
             set;
         }
+
+        /// <summary>
+        /// Gets or sets the collection that contains <see cref="Tag"/> entities.
+        /// </summary>
+        public virtual DbSet<Tag> Tags
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Gets or sets the collection that contains <see cref="ProjectTag"/> entities.
+        /// </summary>
+        public virtual DbSet<ProjectTag> ProjectTags
+        {
+            get;
+            set;
+        }
     }
 }

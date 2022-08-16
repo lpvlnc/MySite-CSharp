@@ -12,7 +12,6 @@ namespace Portfolio.IoC
         public static IServiceCollection AddInfraDependencies(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<DataContext>(options => options.UseSqlServer(configuration.GetSection("ConnectionStrings:default").Value));
-            
             services.AddTransients();
             return services;
         }
@@ -26,6 +25,7 @@ namespace Portfolio.IoC
             services.AddTransient<IContactService, ContactService>();
             services.AddTransient<ISocialService, SocialService>();
             services.AddTransient<IHomeService, HomeService>();
+            services.AddTransient<ITagService, TagService>();
         }
     }
 }

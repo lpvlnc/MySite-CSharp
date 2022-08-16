@@ -9,10 +9,10 @@ namespace Portfolio.API.Controllers
     [Route("[controller]")]
     public class ProjectsController : ControllerBase
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<ProjectsController> _logger;
         private readonly IProjectService _service;
 
-        public ProjectsController(ILogger<HomeController> logger, IProjectService service)
+        public ProjectsController(ILogger<ProjectsController> logger, IProjectService service)
         {
             _logger = logger;
             _service = service;

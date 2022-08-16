@@ -9,10 +9,10 @@ namespace Portfolio.API.Controllers
     [Route("[controller]")]
     public class ContactsController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<ContactsController> _logger;
         private readonly IContactService _service;
 
-        public ContactsController(ILogger<HomeController> logger, IContactService service)
+        public ContactsController(ILogger<ContactsController> logger, IContactService service)
         {
             _logger = logger;
             _service = service;

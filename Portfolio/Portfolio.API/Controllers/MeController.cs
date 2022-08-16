@@ -9,10 +9,10 @@ namespace Portfolio.API.Controllers
     [Route("[controller]")]
     public class MeController : ControllerBase
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<MeController> _logger;
         private readonly IMeService _meService;
 
-        public MeController(ILogger<HomeController> logger, IMeService service)
+        public MeController(ILogger<MeController> logger, IMeService service)
         {
             _logger = logger;
             _meService = service;

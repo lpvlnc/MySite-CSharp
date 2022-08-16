@@ -7,27 +7,27 @@ namespace Portfolio.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class SocialsController : ControllerBase
+    public class TagsController : ControllerBase
     {
-        private readonly ILogger<SocialsController> _logger;
-        private readonly ISocialService _service;
+        private readonly ILogger<TagsController> _logger;
+        private readonly ITagService _service;
 
-        public SocialsController(ILogger<SocialsController> logger, ISocialService service)
+        public TagsController(ILogger<TagsController> logger, ITagService service)
         {
             _logger = logger;
             _service = service;
         }
 
         /// <summary>
-        /// Get the 'Social' table's data.
+        /// Get the 'Tag' table's data.
         /// </summary>
-        /// <returns>List of models of type 'Social'.</returns>
+        /// <returns>List of models of type 'Tag'.</returns>
         [HttpGet]
         [Route("Get")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<Social>))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<Tag>))]
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed, Type = typeof(string))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(CustomExceptionModel))]
-        public ActionResult<List<Social>> Get()
+        public ActionResult<List<Tag>> Get()
         {
             try
             {
@@ -41,15 +41,15 @@ namespace Portfolio.API.Controllers
         }
 
         /// <summary>
-        /// Get the 'Social' table's data that match the specified id.
+        /// Get the 'Tag' table's data that match the specified id.
         /// </summary>
-        /// <returns>Model of type 'Social'.</returns>
+        /// <returns>Model of type 'Tag'.</returns>
         [HttpGet]
         [Route("GetById")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<Social>))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Tag))]
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed, Type = typeof(string))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(CustomExceptionModel))]
-        public ActionResult<List<Social>> GetById(int id)
+        public ActionResult<Tag> GetById(int id)
         {
             try
             {
@@ -63,21 +63,21 @@ namespace Portfolio.API.Controllers
         }
 
         /// <summary>
-        /// Insert a new row at 'Social' table.
+        /// Insert a new row at 'Tag' table.
         /// </summary>
-        /// <param name="model">The model of type 'Social' to be inserted.</param>
-        /// <returns>string: Social inserted.</returns>
+        /// <param name="model">The model of type 'Tag' to be inserted.</param>
+        /// <returns>string: Testimonial inserted.</returns>
         [HttpPost]
         [Route("Insert")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed, Type = typeof(string))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(CustomExceptionModel))]
-        public ActionResult<string> Add([FromBody] Social model)
+        public ActionResult<string> Add([FromBody] Tag model)
         {
             try
             {
                 _service.Add(model);
-                return Ok("Social inserted.");
+                return Ok("Tag inserted.");
             }
             catch (Exception exception)
             {
@@ -87,21 +87,21 @@ namespace Portfolio.API.Controllers
         }
 
         /// <summary>
-        /// Update an existing row of 'Social' table.
+        /// Update an existing row of 'Tag' table.
         /// </summary>
-        /// <param name="model">The model of type 'Social' to be updated.</param>
-        /// <returns>string: Social with id {x} updated.</returns>
+        /// <param name="model">The model of type 'Tag' to be updated.</param>
+        /// <returns>string: Testimonial with id {x} updated.</returns>
         [HttpPut]
         [Route("Update")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed, Type = typeof(string))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(CustomExceptionModel))]
-        public ActionResult<string> Update([FromBody] Social model)
+        public ActionResult<string> Update([FromBody] Tag model)
         {
             try
             {
                 _service.Update(model);
-                return Ok($"Social with id {model.Id} updated.");
+                return Ok($"Tag with id {model.Id} updated.");
             }
             catch (Exception exception)
             {
@@ -111,10 +111,10 @@ namespace Portfolio.API.Controllers
         }
 
         /// <summary>
-        /// Delete a row of 'Social' table based on the id.
+        /// Delete a row of 'Tag' table based on the id.
         /// </summary>
         /// <param name="id">The Id of the register to be deleted.</param>
-        /// <returns>Social with id {x} deleted.</returns>
+        /// <returns>Testimonial with id {x} deleted.</returns>
         [HttpDelete]
         [Route("Delete/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
@@ -125,7 +125,7 @@ namespace Portfolio.API.Controllers
             try
             {
                 _service.Delete(id);
-                return Ok($"Social with id {id} deleted.");
+                return Ok($"Tag with id {id} deleted.");
             }
             catch (Exception exception)
             {

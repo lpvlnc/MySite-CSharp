@@ -9,10 +9,10 @@ namespace Portfolio.API.Controllers
     [Route("[controller]")]
     public class TestimonialsController : ControllerBase
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<TestimonialsController> _logger;
         private readonly ITestimonialService _service;
 
-        public TestimonialsController(ILogger<HomeController> logger, ITestimonialService service)
+        public TestimonialsController(ILogger<TestimonialsController> logger, ITestimonialService service)
         {
             _logger = logger;
             _service = service;
